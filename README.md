@@ -32,7 +32,12 @@ Wait until the hype reaches peak irrationality
 Sell as much of the supply as possible at the top 📈
 Burn whatever cannot be sold 🔥
 ---
+## 🌐 Deployment
 
+Network: Sepolia  
+Contract: 0xadACc94d2d784127F78f5C34A3093545DcA14EFe  
+Etherscan: https://sepolia.etherscan.io/address/0xadACc94d2d784127F78f5C34A3093545DcA14EFe
+---
 ## 🏗️ Architecture
 
 * **ERC-20 Standard** via OpenZeppelin
