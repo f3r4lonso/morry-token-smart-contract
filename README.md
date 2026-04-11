@@ -17,6 +17,21 @@ The contract includes:
 * Automated tests using Hardhat
 
 ---
+🧪 Experimental Tokenomics (Totally Serious Plan™)
+
+This token has absolutely no intrinsic value, no utility, and no real-world purpose — and that’s exactly the point.
+
+The plan is simple:
+
+Launch the token 🚀
+Artificially inflate the price using:
+questionable news
+overly optimistic narratives
+aggressive (and slightly misleading) marketing
+Wait until the hype reaches peak irrationality
+Sell as much of the supply as possible at the top 📈
+Burn whatever cannot be sold 🔥
+---
 
 ## 🏗️ Architecture
 
