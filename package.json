@@ -6,11 +6,14 @@
     "clean": "hardhat clean",
     "compile": "hardhat compile",
     "deploy:localhost": "hardhat run scripts/deploy.ts --network localhost",
+    "deploy:nft-store:localhost": "hardhat run scripts/deploy-nft-store.ts --network localhost",
+    "deploy:nft-store:sepolia": "hardhat run scripts/deploy-nft-store.ts --network sepolia",
     "deploy:sepolia": "hardhat run scripts/deploy.ts --network sepolia",
     "test": "hardhat test"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@nomicfoundation/hardhat-verify": "^1.1.1",
     "dotenv": "^17.2.3",
     "hardhat": "^2.22.0"
   },
