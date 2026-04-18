@@ -19,6 +19,15 @@ describe("MorryToken", function () {
     expect(balance).to.equal(ethers.parseUnits("1000", 18));
   });
 
+  it("Should set token metadata and owner", async function () {
+    const { token, owner } = await deployTokenFixture();
+
+    expect(await token.name()).to.equal("Morry Token");
+    expect(await token.symbol()).to.equal("MORRY");
+    expect(await token.decimals()).to.equal(18);
+    expect(await token.owner()).to.equal(owner.address);
+  });
+
   it("Owner should be able to mint tokens", async function () {
     const { token, addr1 } = await deployTokenFixture();
 

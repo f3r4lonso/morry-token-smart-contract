@@ -1,18 +1,18 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const initialSupply = BigInt(process.env.INITIAL_SUPPLY ?? "1000000");
+  console.log("🚀 Deploying MorryToken...");
+
   const [deployer] = await ethers.getSigners();
+  console.log("👤 Deployer:", deployer.address);
 
-  console.log("Deploying MorryToken with account:", deployer.address);
-  console.log("Initial supply:", initialSupply.toString(), "MORRY");
+  const Token = await ethers.getContractFactory("MorryToken");
 
-  const tokenFactory = await ethers.getContractFactory("MorryToken");
-  const token = await tokenFactory.deploy(initialSupply);
+  const token = await Token.deploy(1000);
 
   await token.waitForDeployment();
 
-  console.log("MorryToken deployed to:", await token.getAddress());
+  console.log("✅ Contract deployed to:", token.target);
 }
 
 main().catch((error) => {
