@@ -14,24 +14,15 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  * internally to ERC-20 base units using the token decimals.
  */
 contract MorryToken is ERC20, Ownable {
+    uint256 public immutable MAX_SUPPLY;
 
-    /**
-     * @dev Creates the MORRY token and mints the initial supply to the deployer.
-     *
-     * The ERC20 constructor sets the human-readable name and symbol. The Ownable
-     * constructor sets the deployer as the initial owner, which means only that
-     * account can call owner-only functions such as `mint`.
-     *
-     * `initialSupply` is multiplied by `10 ** decimals()` so passing `1000`
-     * creates exactly 1000 MORRY tokens with the default 18 ERC-20 decimals.
-     *
-     * @param initialSupply Token amount expressed in whole MORRY units.
-     */
     constructor(uint256 initialSupply)
         ERC20("Morry Token", "MORRY")
         Ownable(msg.sender)
     {
-        _mint(msg.sender, initialSupply * 10 ** decimals());
+        require(maxSupply > 0, "Invalid max supply");
+        MAX_SUPPLY = maxSupply;
+        _mint(msg.sender, maxSupply);
     }
 
     /**
@@ -50,7 +41,8 @@ contract MorryToken is ERC20, Ownable {
      * @param amount Token amount expressed in whole MORRY units.
      */
     function mint(address to, uint256 amount) public onlyOwner {
-        _mint(to, amount * 10 ** decimals());
+        require(totalSupply() + amount <= MAX_SUPPLY, "Max supply exceeded");
+        _mint(to, amount);
     }
 
     /**
